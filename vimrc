@@ -34,10 +34,20 @@ Plugin 'posva/vim-vue'
 
 Plugin 'StanAngeloff/php.vim'
 
+Plugin 'vim-airline/vim-airline'
+let g:airline#extensions#tabline#enabled = 1
+
+
+Plugin 'vim-airline/vim-airline-themes'
+let g:airline_solarized_bg='dark'
+let g:airline_theme='bubblegum'
+
+
 " Colors
 Plugin 'lu-ren/SerialExperimentsLain'
 Plugin 'dunckr/vim-monokai-soda'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'kristijanhusak/vim-hybrid-material'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -61,9 +71,12 @@ set nu
 set clipboard=unnamed
 let python_highlight_all=1
 set t_Co=256
-colo monokai-soda
+" colo
+set background=dark
+colorscheme hybrid_material
 syntax on
 
+let g:enable_bold_font = 1
 
 "split navigation
 
@@ -96,7 +109,7 @@ au BufNewFile,BufRead *.py
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 " Auto Start NERDTree
-autocmd VimEnter * NERDTree
+" autocmd VimEnter * NERDTree
 
 " Ignore pyc files
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
@@ -104,3 +117,5 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 " ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+set backspace=indent,eol,start
